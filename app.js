@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			//add an onClick to each square on the grid
 			squares[i].onclick = () => {
 				//if the square below your current square is taken, you can put disk on top of it
-				if (squares[index + 7].classList.contains('taken')) {
+				if (squares[index + 7].classList.contains('taken') && !squares[index].classList.contains('taken')) {
 					if (currentPlayer === 1) {
 						squares[index].classList.add('taken');
 						squares[index].classList.add('player-one');
