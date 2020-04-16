@@ -114,22 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		//take the 4 values in each winningArrays and plug them into the squares
 
 		winningArrays.forEach((e, i) => {
-			let square1 = squares[winningArrays[y][0]];
-			let square2 = squares[winningArrays[y][1]];
-			let square3 = squares[winningArrays[y][2]];
-			let square4 = squares[winningArrays[y][3]];
+			let square1 = squares[winningArrays[i][0]];
+			let square2 = squares[winningArrays[i][1]];
+			let square3 = squares[winningArrays[i][2]];
+			let square4 = squares[winningArrays[i][3]];
 
 			//check if the square1, square2, square3 and square4 arrays to see if they all have the class of player-one
 
 			if (square1.classList.contains('player-one') && square2.classList.contains('player-one') && square3.classList.contains('player-one') && square4.classList.contains('player-one')) {
 				//then player 1 is the winner
-				result.innerHTML = 'Player One (RED) Wins!';
+				result[0].innerHTML = 'Player One (RED) Wins!';
 			}
 
 			//now check if the square1, square2, square3 and square4 arrays to see if they all have the class of player-two
 			else if (square1.classList.contains('player-two') && square2.classList.contains('player-two') && square3.classList.contains('player-two') && square4.classList.contains('player-two')) {
 				//then player 2 is the winner
-				result.innerHTML = 'Player Two (Blue) Wins!';
+				result[0].innerHTML = 'Player Two (Blue) Wins!';
 			}
 		});
 	};
