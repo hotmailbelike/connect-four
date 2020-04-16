@@ -124,12 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (square1.classList.contains('player-one') && square2.classList.contains('player-one') && square3.classList.contains('player-one') && square4.classList.contains('player-one')) {
 				//then player 1 is the winner
 				result[0].innerHTML = 'Player One (RED) Wins!';
+				playAgain(result[0].innerHTML);
 			}
 
 			//now check if the square1, square2, square3 and square4 arrays to see if they all have the class of player-two
 			else if (square1.classList.contains('player-two') && square2.classList.contains('player-two') && square3.classList.contains('player-two') && square4.classList.contains('player-two')) {
 				//then player 2 is the winner
 				result[0].innerHTML = 'Player Two (Blue) Wins!';
+				playAgain(result[0].innerHTML);
 			}
 		});
 	};
@@ -137,3 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	//add an eventListener to each square that will trigger the checkBoard function onClick
 	squares.forEach((square) => square.addEventListener('click', checkBoard));
 });
+
+const playAgain = (msg) => {
+	setTimeout(() => {
+		alert(msg + ' \n Press Okay to play again!');
+		location.reload();
+	}, 10);
+};
